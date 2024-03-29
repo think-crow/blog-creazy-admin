@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # admin
 
 This template should help get you started developing with Vue 3 in Vite.
@@ -33,3 +34,6 @@ npm run build
 ```sh
 npm run lint
 ```
+=======
+# bolg-creazy-admin
+>>>>>>> 7b54e4258c2446387fc0d7173821121c2a232c55
