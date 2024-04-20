@@ -23,12 +23,12 @@ const menuOptions = [
         RouterLink,
         {
           to: {
-            name: "notepagesshow",
+            name: "articles",
           },
         },
-        { default: () => "个人便笺" }
+        { default: () => "文章列表" }
       ),
-    key: "go-notepages",
+    key: "go-articles",
     icon: renderIcon(HomeIcon),
   },
   {
@@ -37,12 +37,12 @@ const menuOptions = [
         RouterLink,
         {
           to: {
-            path: "/notepages/notepagesadd",
+            path: "/articles/articlesadd",
           },
         },
         { default: () => "添加" }
       ),
-    key: "go-notepages-add",
+    key: "go-articles-articlesadd",
     icon: renderIcon(WorkIcon),
   },
 ];
@@ -55,7 +55,7 @@ const menuOptions = [
         <n-menu :options="menuOptions" mode="horizontal" />
       </div>
       <div class="main-content">
-        <!-- <div class="header">便笺</div> -->
+        <!-- <div class="header">头部</div> -->
         <div class="mycontent"><RouterView></RouterView></div>
       </div>
     </div>

@@ -6,18 +6,29 @@ import Show   from '../views/bookmovies/Show.vue'
 import Add   from '../views/bookmovies/Add.vue'
 import Modify   from '../views/bookmovies/Modify.vue'
 
-
-
 import MingYans   from '../views/MingYans.vue'
+
 import NotePages   from '../views/notepages/NotePages.vue'
+import NotePagesAdd  from '../views/notepages/NotePagesAdd.vue'
+import NotePagesShow  from '../views/notepages/NotePagesShow.vue'
+import ModifyNotePages  from '../views/notepages/ModifyNotePages.vue'
 
 import Poetrys   from '../views/poetrys/Poetrys.vue'
 import PoetrysAdd   from '../views/poetrys/PoetrysAdd.vue'
 import PoetrysShow   from '../views/poetrys/PoetrysShow.vue'
+import ModifyPoetrys   from '../views/poetrys/ModifyPoetrys.vue'
 
-import HuaTi  from '../views/huati/HuaTi.vue'
-import HuatiAdd  from '../views/huati/HuatiAdd.vue'
-import HuatiShow  from '../views/huati/HuatiShow.vue'
+import Topics  from '../views/huati/Topics.vue'
+import TopicsAdd  from '../views/huati/TopicsAdd.vue'
+import TopicsShow  from '../views/huati/TopicsShow.vue'
+import ModifyTopics  from '../views/huati/ModifyTopics.vue'
+
+import Articles   from '../views/articles/Articles.vue'
+import ArticlesAdd   from '../views/articles/ArticlesAdd.vue'
+import ArticlesShow   from '../views/articles/ArticlesShow.vue'
+import ModifyArticles   from '../views/articles/ModifyArticles.vue'
+
+
 
 import Tools   from '../views/GongJu.vue'
 import GongJu from '../views/GongJu.vue'
@@ -62,7 +73,25 @@ const router = createRouter({
     {
       path: '/notepages',
       name: 'notepages',
-      component: NotePages
+      component: NotePages,
+      redirect:'/notepages/notepagesshow',
+      children:[
+        {
+          path: 'notepagesadd',
+          name: 'notepagesadd',
+          component: NotePagesAdd
+        },
+        {
+          path: 'notepagesshow',
+          name: 'notepagesshow',
+          component: NotePagesShow
+        },
+        {
+          path: 'modifynotepages',
+          name: 'modifynotepages',
+          component: ModifyNotePages
+        },
+      ]
     },
     {
       path: '/poetrys',
@@ -75,30 +104,67 @@ const router = createRouter({
           name: 'poetrysadd',
           component: PoetrysAdd
         },
+  
         {
           path: 'poetrysshow',
           name: 'poetrysshow',
           component: PoetrysShow
         },
+        {
+          path: 'modifypoetrys',
+          name: 'modifypoetrys',
+          component: ModifyPoetrys
+        },
    
       ],
     },
     {
-      path: '/huati',
-      name: 'huati',
-      component: HuaTi,
-      redirect:'/huati/huatishow',
+      path: '/topics',
+      name: 'topics',
+      component: Topics,
+      redirect:'/topics/topicsshow',
       children:[
         {
-          path: 'huatiadd',
-          name: 'huatiadd',
-          component: HuatiAdd
+          path: 'topicsadd',
+          name: 'topicsadd',
+          component: TopicsAdd
         },
         {
-          path: 'huatishow',
-          name: 'huatishow',
-          component: HuatiShow
+          path: 'topicsshow',
+          name: 'topicsshow',
+          component: TopicsShow
         },
+        {
+          path: 'modifytopics',
+          name: 'modifytopics',
+          component: ModifyTopics
+        },
+   
+   
+      ],
+    },
+    {
+      path: '/articles',
+      name: 'articles',
+      component: Articles,
+      redirect:'/articles/articlesshow',
+      children:[
+        {
+          path: 'articlesadd',
+          name: 'articlesadd',
+          component: ArticlesAdd
+        },
+        {
+          path: 'articlesshow',
+          name: 'articlesshow',
+          component: ArticlesShow
+        },
+        {
+          path: 'modifyarticles',
+          name: 'modifyarticles',
+          component: ModifyArticles
+        },
+   
    
       ],
     },
