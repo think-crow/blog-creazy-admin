@@ -65,7 +65,7 @@ const menuOptions = [
         RouterLink,
         {
           to: {
-            path: "/huati",
+            path: "/topics",
           },
         },
         { default: () => "话题" }
@@ -85,6 +85,20 @@ const menuOptions = [
         { default: () => "便笺" }
       ),
     key: "go-to-notepages",
+    icon: renderIcon(WorkIcon),
+  },
+  {
+    label: () =>
+      h(
+        RouterLink,
+        {
+          to: {
+            path: "/articles",
+          },
+        },
+        { default: () => "文章" }
+      ),
+    key: "go-to-articles",
     icon: renderIcon(WorkIcon),
   },
   {

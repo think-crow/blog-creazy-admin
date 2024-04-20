@@ -31,6 +31,11 @@ export default defineConfig({
       resolvers: [NaiveUiResolver()]
     })
   ],
+  server:{
+    open:true,
+    host:'localhost',
+    port:5173
+  },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))

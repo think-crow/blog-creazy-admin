@@ -23,12 +23,12 @@ const menuOptions = [
         RouterLink,
         {
           to: {
-            name: "huatishow",
+            name: "topics",
           },
         },
         { default: () => "话题列表" }
       ),
-    key: "go-huati",
+    key: "go-topics",
     icon: renderIcon(HomeIcon),
   },
   {
@@ -37,12 +37,12 @@ const menuOptions = [
         RouterLink,
         {
           to: {
-            path: "/huati/huatiadd",
+            path: "/topics/topicsadd",
           },
         },
         { default: () => "添加" }
       ),
-    key: "go-huati-add",
+    key: "go-topics-topicsadd",
     icon: renderIcon(WorkIcon),
   },
 ];
@@ -55,11 +55,7 @@ const menuOptions = [
         <n-menu :options="menuOptions" mode="horizontal" />
       </div>
       <div class="main-content">
-        <!-- <div class="header">头部</div> -->
-        <div class="mycontent">
-          <!-- <p class="biaoqian">话题:</p> -->
-          <RouterView></RouterView>
-        </div>
+        <div class="mycontent"><RouterView></RouterView></div>
       </div>
     </div>
   </n-config-provider>
@@ -98,14 +94,5 @@ const menuOptions = [
 
 .mycontent {
   min-height: 896px;
-  position: relative;
-}
-
-.biaoqian {
-  float: left;
-  position: absolute;
-  font-size: 1.8em;
-  top: -1.2em;
-  left: 0.5em;
 }
 </style>
