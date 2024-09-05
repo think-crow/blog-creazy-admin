@@ -44,6 +44,7 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: Houtai,
+      redirect: '/notepages',  // 根路径重定向到 /homeview
       meta: { requiresAuth: true },
       children:[
         {

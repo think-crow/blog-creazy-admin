@@ -29,13 +29,13 @@ const formatDate = (timestamp) => {
 </script>
 
 <template>
-  <h2>建议列表:</h2>
+<div>  <h2>建议列表:</h2>
   <div class="container">
     <div v-for="(item, index) in suggests_data" :key="index">
       {{ index }} 、{{ item.jianyi }}
       <span>{{ formatDate(item.submi_date) }}</span>
     </div>
-  </div>
+  </div></div>
 </template>
 
 <style scoped>

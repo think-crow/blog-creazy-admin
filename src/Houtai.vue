@@ -11,130 +11,130 @@ import { NIcon } from "naive-ui";
 
 // 富文本
 
-import {
-  LaptopOutline as WorkIcon,
-  LogOutOutline as HomeIcon,
-} from "@vicons/ionicons5";
+// import {
+//   LaptopOutline as WorkIcon,
+//   LogOutOutline as HomeIcon,
+// } from "@vicons/ionicons5";
 
-function renderIcon(icon) {
-  return () => h(NIcon, null, { default: () => h(icon) });
-}
+// function renderIcon(icon) {
+//   return () => h(NIcon, null, { default: () => h(icon) });
+// }
 
-const menuOptions = [
-  {
-    label: () =>
-      h(
-        RouterLink,
-        {
-          to: {
-            name: "homeview",
-          },
-        },
-        { default: () => "建议" }
-      ),
-    key: "go-back-home",
-    icon: renderIcon(HomeIcon),
-  },
-  {
-    label: () =>
-      h(
-        RouterLink,
-        {
-          to: {
-            path: "/bookmovies",
-          },
-        },
-        { default: () => "书影" }
-      ),
-    key: "go-to-bookmovies",
-    icon: renderIcon(WorkIcon),
-  },
-  {
-    label: () =>
-      h(
-        RouterLink,
-        {
-          to: {
-            path: "/poetrys",
-          },
-        },
-        { default: () => "诗歌" }
-      ),
-    key: "go-to-poetrys",
-    icon: renderIcon(WorkIcon),
-  },
-  {
-    label: () =>
-      h(
-        RouterLink,
-        {
-          to: {
-            path: "/topics",
-          },
-        },
-        { default: () => "话题" }
-      ),
-    key: "go-to-huati",
-    icon: renderIcon(WorkIcon),
-  },
-  {
-    label: () =>
-      h(
-        RouterLink,
-        {
-          to: {
-            path: "/notepages",
-          },
-        },
-        { default: () => "便笺" }
-      ),
-    key: "go-to-notepages",
-    icon: renderIcon(WorkIcon),
-  },
-  {
-    label: () =>
-      h(
-        RouterLink,
-        {
-          to: {
-            path: "/articles",
-          },
-        },
-        { default: () => "文章" }
-      ),
-    key: "go-to-articles",
-    icon: renderIcon(WorkIcon),
-  },
-  {
-    label: () =>
-      h(
-        RouterLink,
-        {
-          to: {
-            path: "/gongju",
-          },
-        },
-        { default: () => "访客记录" }
-      ),
-    key: "go-to-gongju",
-    icon: renderIcon(WorkIcon),
-  },
+// const menuOptions = [
+//   {
+//     label: () =>
+//       h(
+//         RouterLink,
+//         {
+//           to: {
+//             name: "homeview",
+//           },
+//         },
+//         { default: () => "建议" }
+//       ),
+//     key: "go-back-home",
+//     icon: renderIcon(HomeIcon),
+//   },
+//   {
+//     label: () =>
+//       h(
+//         RouterLink,
+//         {
+//           to: {
+//             path: "/bookmovies",
+//           },
+//         },
+//         { default: () => "书影" }
+//       ),
+//     key: "go-to-bookmovies",
+//     icon: renderIcon(WorkIcon),
+//   },
+//   {
+//     label: () =>
+//       h(
+//         RouterLink,
+//         {
+//           to: {
+//             path: "/poetrys",
+//           },
+//         },
+//         { default: () => "诗歌" }
+//       ),
+//     key: "go-to-poetrys",
+//     icon: renderIcon(WorkIcon),
+//   },
+//   {
+//     label: () =>
+//       h(
+//         RouterLink,
+//         {
+//           to: {
+//             path: "/topics",
+//           },
+//         },
+//         { default: () => "话题" }
+//       ),
+//     key: "go-to-huati",
+//     icon: renderIcon(WorkIcon),
+//   },
+//   {
+//     label: () =>
+//       h(
+//         RouterLink,
+//         {
+//           to: {
+//             path: "/notepages",
+//           },
+//         },
+//         { default: () => "便笺" }
+//       ),
+//     key: "go-to-notepages",
+//     icon: renderIcon(WorkIcon),
+//   },
+//   {
+//     label: () =>
+//       h(
+//         RouterLink,
+//         {
+//           to: {
+//             path: "/articles",
+//           },
+//         },
+//         { default: () => "文章" }
+//       ),
+//     key: "go-to-articles",
+//     icon: renderIcon(WorkIcon),
+//   },
+//   {
+//     label: () =>
+//       h(
+//         RouterLink,
+//         {
+//           to: {
+//             path: "/gongju",
+//           },
+//         },
+//         { default: () => "访客记录" }
+//       ),
+//     key: "go-to-gongju",
+//     icon: renderIcon(WorkIcon),
+//   },
 
-  {
-    label: () =>
-      h(
-        RouterLink,
-        {
-          to: {
-            path: "/mingyans",
-          },
-        },
-        { default: () => "名言" }
-      ),
-    key: "go-to-mingyan",
-    icon: renderIcon(WorkIcon),
-  },
-];
+//   {
+//     label: () =>
+//       h(
+//         RouterLink,
+//         {
+//           to: {
+//             path: "/mingyans",
+//           },
+//         },
+//         { default: () => "名言" }
+//       ),
+//     key: "go-to-mingyan",
+//     icon: renderIcon(WorkIcon),
+//   },
+// ];
 
 import { useRouter } from 'vue-router';
 
@@ -190,10 +190,6 @@ const logout = () => {
   background-color: #101014;
   color: #d8d8d8;
 }
-button{
-  /* float: right; */
-}
-
 
 .main-content {
 
@@ -202,11 +198,17 @@ button{
 
 .aside{
   /* border: 1px solid red; */
-
+  position: sticky; /* 将 position 从 fixed 改为 sticky */
+  top: 0; /* 固定在视口的顶部 */
+  height: 100%; /* 高度占据视口高度 */
   text-align: center;
   flex-basis: 0%; /* 设置侧边菜单宽度 */
   padding: 1em 0;
+  background-color: #101014;
+  z-index: 1000; /* 设置较高的 z-index */
 }
+
+
 
 .aside a {
 /* display: block; */
@@ -260,7 +262,7 @@ nav {
   .aside {
     display: block; /* 显示侧边菜单 */
     flex-basis: 10%; /* 设置侧边菜单宽度 */
-    border-right: 1px solid rgb(178, 170, 170);
+   background-color: #101014;
     color: black;
     padding-top: 1em;
   }
@@ -277,6 +279,7 @@ display: block;
 
   .main-content {
     flex-basis: 90%; /* 设置主内容区宽度 */
+    border-left: 1px solid rgb(178, 170, 170);
   }
 
   .aside a.active-link {

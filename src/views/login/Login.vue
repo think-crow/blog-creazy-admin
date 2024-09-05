@@ -24,7 +24,8 @@
     import axios from 'axios';
     import router from '@/router'; // 假设有一个 Vue Router 的实例
     import { throttle } from "lodash-es"; // 防抖
-  
+
+
     const username = ref('');
     const password = ref('');
     const loginError = ref(false);
@@ -42,6 +43,14 @@
           username: username.value,
           password: password.value
         });
+
+        //解析用户角色！
+        const parts = response.data.token.split('.');
+    const payload = JSON.parse(atob(parts[1]));
+    const role = payload.role;
+    // console.log('Role:', role);
+
+
         // console.log(response);
         if (response.data.token) {
           console.log('登录成功');
@@ -58,8 +67,17 @@
           const userInfo = userInfoResponse.data;
           handleUserPermissions(userInfo);
   
-          router.push('/notepages');
-        // console.log("tiaozhuanyemian");
+             // 根据角色跳转
+      if (role === 'admin') {
+        router.push('/notepages');
+      } else if (role === 'user') {
+        router.push('/mingyans');
+      } else {
+        console.log('未知角色');
+        loginError.value = true;
+        loginErrorMessage.value = '角色未知，无法跳转';
+        alert(loginErrorMessage.value);
+      }
         } else {
           console.log('登录失败');
           alert('登录失败,请三十分钟后再试');

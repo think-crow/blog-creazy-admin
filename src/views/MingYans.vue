@@ -52,6 +52,7 @@ onMounted(() => {
 </script>
 
 <template>
+<div>
   <h2>晓龙博客留言:</h2>
   <div class="container">
     <div v-for="(item, index) in suggests_data" :key="index">
@@ -59,6 +60,7 @@ onMounted(() => {
       <span>{{ formatDate(item.updatedAt) }}</span>
     </div>
   </div>
+</div>
 </template>
 
 <style scoped>
