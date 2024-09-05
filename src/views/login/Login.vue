@@ -48,7 +48,7 @@
         const parts = response.data.token.split('.');
     const payload = JSON.parse(atob(parts[1]));
     const role = payload.role;
-    // console.log('Role:', role);
+    console.log('Role:', role);
 
 
         // console.log(response);
@@ -69,8 +69,10 @@
   
              // 根据角色跳转
       if (role === 'admin') {
+        console.log('admin登录');
         router.push('/notepages');
       } else if (role === 'user') {
+        console.log('user登录');
         router.push('/mingyans');
       } else {
         console.log('未知角色');
